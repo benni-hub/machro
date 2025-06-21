@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Our Programs | MACHRO - Community Health & Empowerment</title>
+  <meta name="description" content="Discover MACHRO's comprehensive programs in health, economic empowerment, education, and advocacy serving West Nile, Uganda.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #093e5e;
+      --secondary-color: #f5b041;
+      --accent-color: #e67e22;
+      --light-text: #ffffff;
+      --dark-text: #333333;
+      --light-bg: #f9f9f9;
+      --dark-bg: #2c3e50;
+      --transition: all 0.3s ease;
+      /* Teal color variables for hero section */
+      --hero-teal: #00897B;
+      --hero-overlay: rgba(0, 137, 123, 0.85);
+      
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: var(--dark-text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    /* Header & Navigation */
+    header {
+      background: var(--primary-color);
+      padding: 1rem 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 60px;
+      border-radius: 5px;
+      transition: var(--transition);
+    }
+
+    .logo img:hover {
+      transform: scale(1.05);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      color: var(--light-text);
+      font-weight: 600;
+      padding: 0.5rem 0;
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--secondary-color);
+    }
+
+    .nav-links a.active {
+      color: var(--secondary-color);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--secondary-color);
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      color: white;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+
+    /* Teal-themed Hero Section */
+    .programs-hero {
+      background: linear-gradient(var(--hero-overlay), var(--hero-overlay)), 
+                  url('images/programs-banner.jpg') center/cover no-repeat;
+      height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      margin-top: 80px;
+    }
+
+    .programs-hero h1 {
+      font-size: 3.2rem;
+      margin-bottom: 1.5rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .programs-hero p {
+      font-size: 1.5rem;
+      max-width: 700px;
+      margin: 0 auto;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    }
+
+    /* Programs Section */
+    .programs-section {
+      padding: 4rem 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-title h2 {
+      color: var(--primary-color);
+      font-size: 2.5rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: var(--secondary-color);
+    }
+
+    .programs-intro {
+      max-width: 800px;
+      margin: 0 auto 3rem;
+      text-align: center;
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    .program-categories {
+      margin-bottom: 3rem;
+    }
+
+    .category-title {
+      color: var(--primary-color);
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--secondary-color);
+    }
+
+    .programs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .program-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: var(--transition);
+    }
+
+    .program-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    }
+
+    .program-img {
+      height: 250px;
+      overflow: hidden;
+    }
+
+    .program-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .program-card:hover .program-img img {
+      transform: scale(1.1);
+    }
+
+    .program-content {
+      padding: 1.5rem;
+    }
+
+    .program-content h3 {
+      color: var(--primary-color);
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .program-content p {
+      color: #555;
+      margin-bottom: 1.5rem;
+    }
+
+    .program-features {
+      margin-bottom: 1.5rem;
+    }
+
+    .program-features h4 {
+      color: var(--secondary-color);
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .program-features ul {
+      margin-left: 1.5rem;
+      color: #555;
+    }
+
+    .program-features li {
+      margin-bottom: 0.5rem;
+    }
+
+    .program-btn {
+      display: inline-block;
+      padding: 0.7rem 1.5rem;
+      background: var(--primary-color);
+      color: white;
+      border-radius: 5px;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .program-btn:hover {
+      background: var(--accent-color);
+      transform: translateY(-2px);
+    }
+
+    /* Impact Section */
+    .impact-section {
+      padding: 4rem 0;
+      background: var(--light-bg);
+      text-align: center;
+    }
+
+    .impact-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .stat-item {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--secondary-color);
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-text {
+      color: var(--primary-color);
+      font-weight: 600;
+    }
+    .programs-hero{
+      background: linear-gradient(var(--hero-overlay), var(--hero-overlay)), 
+                  url('images/home2.jpg') center/cover no-repeat;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      padding: 5rem 0;
+      background: linear-gradient(rgba(9, 62, 94, 0.9), rgba(9, 62, 94, 0.9)), 
+                  url('images/cta-bg.jpg') center/cover no-repeat;
+      color: white;
+      text-align: center;
+    }
+
+    .cta-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .cta-content h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .cta-content p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      padding: 1rem 2rem;
+      border-radius: 5px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      transition: var(--transition);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .cta-btn.primary {
+      background: var(--secondary-color);
+      color: var(--dark-text);
+    }
+
+    .cta-btn.secondary {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    }
+
+    .cta-btn.primary:hover {
+      background: #e09a36;
+    }
+
+    .cta-btn.secondary:hover {
+      background: rgba(255,255,255,0.1);
+    }
+
+    /* Footer Styles */
+    footer {
+      background-color: var(--dark-bg);
+      color: var(--light-text);
+      padding: 3rem 0 1rem;
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-about h3 {
+      color: var(--secondary-color);
+      margin-bottom: 1.5rem;
+      font-size: 1.2rem;
+    }
+
+    .footer-links h4, .footer-contact h4 {
+      color: var(--secondary-color);
+      margin-bottom: 1.5rem;
+      font-size: 1.2rem;
+    }
+
+    .footer-links ul {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-links a {
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: var(--secondary-color);
+      padding-left: 5px;
+    }
+
+    .footer-contact p {
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .social-icons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      transition: var(--transition);
+    }
+
+    .social-icons a:hover {
+      background: var(--secondary-color);
+      transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.9rem;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--primary-color);
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 0;
+        clip-path: circle(0px at 90% -10%);
+        transition: all 0.5s ease-out;
+        pointer-events: none;
+      }
+
+      .nav-links.active {
+        clip-path: circle(1000px at 90% -10%);
+        pointer-events: all;
+      }
+
+      .nav-links a {
+        padding: 0.8rem 0;
+      }
+
+      .programs-hero {
+        height: 400px;
+      }
+
+      .programs-hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .programs-hero p {
+        font-size: 1.2rem;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .cta-btn {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <div class="logo">
+          <a href="index.html"><img src="images/logo.jpg" alt="MACHRO Logo"></a>
+        </div>
+        <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+        <div class="nav-links" id="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="programs.html" class="active">Programs</a>
+          <a href="get involved.html">Get Involved</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Teal-themed Hero Section -->
+  <section class="programs-hero">
+    <div class="container">
+      <h1>Our Transformative Programs</h1>
+      <p>Comprehensive initiatives addressing health, economic, education and advocacy needs in West Nile communities</p>
+    </div>
+  </section>
+
+  <!-- Programs Section -->
+  <section class="programs-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our Program Areas</h2>
+      </div>
+      
+      <p class="programs-intro">MACHRO implements targeted programs across four key areas to create sustainable change in West Nile, Uganda. Each program is designed with community participation to ensure relevance and maximum impact.</p>
+      
+      <!-- Health Programs -->
+      <div class="program-categories">
+        <h3 class="category-title">Health Initiatives</h3>
+        <div class="programs-grid">
+          <!-- Community Health Awareness -->
+          <div class="program-card">
+            <div class="program-img">
+              <img src="images/health care provision.jpg" alt="Community Health Awareness">
+            </div>
+            <div class="program-content">
+              <h3>Community Health Awareness</h3>
+              <p>Educating communities about disease prevention, hygiene practices, and healthy lifestyles through workshops and outreach.</p>
+              <div class="program-features">
+                <h4>Key Activities:</h4>
+                <ul>
+                  <li>Disease prevention workshops</li>
+                  <li>Hygiene education campaigns</li>
+                  <li>Community health dialogues</li>
+                  <li>Radio talk shows on health topics</li>
+                </ul>
+              </div>
+              <a href="#" class="program-btn">Learn More</a>
+            </div>
+          </div>
+          
+          <!-- Access to Healthcare -->
+          <div class="program-card">
+            <div class="program-img">
+              <img src="images/sr.hr info.jpg" alt="Access to Healthcare Services">
+            </div>
+            <div class="program-content">
+              <h3>Access to Healthcare Services</h3>
+              <p>Improving healthcare accessibility through mobile clinics, referrals, and support for vulnerable populations.</p>
+              <div class="program-features">
+                <h4>Key Activities:</h4>
+                <ul>
+                  <li>Mobile medical clinics</li>
+                  <li>Health facility referrals</li>
+                  <li>Transportation assistance</li>
+                  <li>Medication support programs</li>
+                </ul>
+              </div>
+              <a href="#" class="program-btn">Learn More</a>
+            </div>
+          </div>
+          
+          <!-- Mental Health Support -->
+          <div class="program-card">
+            <div class="program-img">
+              <img src="images/education.jpg" alt="Mental Health Support">
+            </div>
+            <div class="program-content">
+              <h3>Mental Health Support</h3>
+              <p>Providing counseling services, awareness campaigns, and community support for mental health issues.</p>
+              <div class="program-features">
+                <h4>Key Activities:</h4>
+                <ul>
+                  <li>Community counseling services</li>
+                  <li>Mental health first aid training</li>
+                  <li>Support groups</li>
+                  <li>Stigma reduction campaigns</li>
+                </ul>
+              </div>
+              <a href="#" class="program-btn">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Economic Empowerment Programs -->
+      <div class="program-categories">
+        <h3 class="category-title">Economic Empowerment</h3>
+        <div class="programs-grid">
+          <!-- Microfinance Initiatives -->
+          <div class="program-card">
+            <div class="program-img">
+              <img src="images/youth savings.jpg" alt="Microfinance Initiatives">
+            </div>
+            <div class="program-content">
+              <h3>Microfinance Initiatives</h3>
+              <p>Providing small loans, savings programs, and financial literacy training to support local entrepreneurs.</p>
+              <div class="program-features">
+                <h4>Key Activities:</h4>
+                <ul>
+                  <li>Village savings and loan associations</li>
+                  <li>Small business grants</li>
+                  <li>Financial literacy training</li>
+                  <li>Credit management workshops</li>
+                </ul>
+              </div>
+              <a href="#" class="program-btn">Learn More</a>
+            </div>
+          </div>
+          
+          <!-- Skills Training -->
+          <div class="program-card">
+            <div class="program-img">
+              <img src="images/women group.jpg" alt="Skills Training Initiatives">
+            </div>
+            <div class="program-content">
+              <h3>Skills Training Initiatives</h3>
+              <p>Vocational training programs to equip community members with marketable skills for sustainable livelihoods.</p>
+              <div class="program-features">
+                <h4>Key Activities:</h4>
+                <ul>
+                  <li>Tailoring and fashion design</li>
+                  <li>Carpentry and construction</li>
+                  <li>Hairdressing and beauty</li>
+                  <li>Agribusiness training</li>
+                </ul>
+              </div>
+              <a href="#" class="program-btn">Learn More</a>
+            </div>
+          </div>
+          
+          <!-- Market Access -->
+          <div class="program-card">
+            <div class="program-img">
+              <img src="images/capacity building workshop.jpg" alt="Market Access Programs">
+            </div>
+            <div class="program-content">
+              <h3>Market Access Programs</h3>
+              <p>Connecting local producers with markets and supporting value addition for agricultural products.</p>
+              <div class="program-features">
+                <h4>Key Activities:</h4>
+                <ul>
+                  <li>Market linkage initiatives</li>
+                  <li>Cooperative development</li>
+                  <li>Value addition training</li>
+                  <li>Business networking events</li>
+                </ul>
+              </div>
+              <a href="#" class="program-btn">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Education Programs -->
+      <div class="program-categories">
+        <h3 class="category-title">Education & Empowerment</h3>
+        <div class="programs-grid">
+          <!-- Education Literacy -->
+          <div class="program-card">
+            <div class="program-img">
+              <img src="images/home.jpg" alt="Education Literacy Programs">
+            </div>
+            <div class="program-content">
+              <h3>Education Literacy Programs</h3>
+              <p>Improving literacy rates through adult education classes, school support programs, and reading initiatives.</p>
+              <div class="program-features">
+                <h4>Key Activities:</h4>
+                <ul>
+                  <li>Adult literacy classes</li>
+                  <li>School reading programs</li>
+                  <li>Library development</li>
+                  <li>Parent education workshops</li>
+                </ul>
+              </div>
+              <a href="#" class="program-btn">Learn More</a>
+            </div>
+          </div>
+          
+          <!-- Inclusive Services -->
+          <div class="program-card">
+            <div class="program-img">
+              <img src="images/home2.jpg" alt="Inclusive & Accessible Services">
+            </div>
+            <div class="program-content">
+              <h3>Inclusive & Accessible Services</h3>
+              <p>Ensuring our programs reach and serve persons with disabilities and other marginalized groups.</p>
+              <div class="program-features">
+                <h4>Key Activities:</h4>
+                <ul>
+                  <li>Disability-friendly facilities</li>
+                  <li>Sign language interpretation</li>
+                  <li>Special needs education</li>
+                  <li>Inclusive program design</li>
+                </ul>
+              </div>
+              <a href="#" class="program-btn">Learn More</a>
+            </div>
+          </div>
+          
+          <!-- Health Education -->
+          <div class="program-card">
+            <div class="program-img">
+              <img src="images/health.jpg" alt="Health Education Sessions">
+            </div>
+            <div class="program-content">
+              <h3>Health Education Sessions</h3>
+              <p>Interactive sessions on nutrition, family planning, disease prevention, and healthy living practices.</p>
+              <div class="program-features">
+                <h4>Key Activities:</h4>
+                <ul>
+                  <li>School health clubs</li>
+                  <li>Maternal health workshops</li>
+                  <li>Nutrition demonstrations</li>
+                  <li>SRHR education</li>
+                </ul>
+              </div>
+              <a href="#" class="program-btn">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Advocacy Programs -->
+      <div class="program-categories">
+        <h3 class="category-title">Advocacy & Community Mobilization</h3>
+        <div class="programs-grid">
+          <!-- Human Awareness Campaigns -->
+          <div class="program-card">
+            <div class="program-img">
+              <img src="images/community outreach.jpg" alt="Human Awareness Campaigns">
+            </div>
+            <div class="program-content">
+              <h3>Human Awareness Campaigns</h3>
+              <p>Raising awareness about human rights, gender equality, and social justice issues affecting our communities.</p>
+              <div class="program-features">
+                <h4>Key Activities:</h4>
+                <ul>
+                  <li>Gender equality workshops</li>
+                  <li>Human rights education</li>
+                  <li>Community dialogues</li>
+                  <li>Media campaigns</li>
+                </ul>
+              </div>
+              <a href="#" class="program-btn">Learn More</a>
+            </div>
+          </div>
+          
+          <!-- Policy Advocacy -->
+          <div class="program-card">
+            <div class="program-img">
+              <img src="images/advocates.jpg" alt="Policy Advocacy Initiatives">
+            </div>
+            <div class="program-content">
+              <h3>Policy Advocacy Initiatives</h3>
+              <p>Engaging with policymakers to influence decisions that affect community health and economic wellbeing.</p>
+              <div class="program-features">
+                <h4>Key Activities:</h4>
+                <ul>
+                  <li>Stakeholder meetings</li>
+                  <li>Policy research</li>
+                  <li>Community petitions</li>
+                  <li>Advocacy training</li>
+                </ul>
+              </div>
+              <a href="#" class="program-btn">Learn More</a>
+            </div>
+          </div>
+          
+          <!-- Community Mobilization -->
+          <div class="program-card">
+            <div class="program-img">
+              <img src="images/community outreach.jpg" alt="Community Mobilization">
+            </div>
+            <div class="program-content">
+              <h3>Community Mobilization</h3>
+              <p>Organizing communities to take collective action for health improvement and economic development.</p>
+              <div class="program-features">
+                <h4>Key Activities:</h4>
+                <ul>
+                  <li>Community action groups</li>
+                  <li>Participatory planning</li>
+                  <li>Volunteer networks</li>
+                  <li>Local leadership training</li>
+                </ul>
+              </div>
+              <a href="#" class="program-btn">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact Section -->
+  <section class="impact-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our Impact</h2>
+        <p>Measuring success through community transformation</p>
+      </div>
+      
+      <div class="impact-stats">
+        <div class="stat-item">
+          <div class="stat-number">5,000+</div>
+          <div class="stat-text">People Reached with Health Services</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">300+</div>
+          <div class="stat-text">Entrepreneurs Supported</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">15</div>
+          <div class="stat-text">Communities Engaged</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">50+</div>
+          <div class="stat-text">Training Sessions Conducted</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Join Us in Creating Change</h2>
+        <p>Your support helps us expand these programs to reach more communities in West Nile, Uganda.</p>
+        <div class="cta-buttons">
+          <a href="get involved.html" class="cta-btn primary">Get Involved</a>
+          <a href="contact.html" class="cta-btn secondary">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-about">
+          <h3>MACHRO</h3>
+          <p>Creating a healthy and economically sustainable community in West Nile, Uganda.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="get involved.html">Get Involved</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact Us</h4>
+          <p><i class="fas fa-map-marker-alt"></i> Maracha District, Uganda</p>
+          <p><i class="fas fa-envelope"></i> enzaruemmanuela@gmail.com</p>
+          <p><i class="fas fa-phone"></i> +256 770 902 783</p>
+          <div class="social-icons">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 MACHRO. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Simple animation for stats
+    const statNumbers = document.querySelectorAll('.stat-number');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const target = +entry.target.textContent.replace('+', '');
+          let count = 0;
+          const increment = target / 100;
+          const updateCount = () => {
+            count += increment;
+            if (count < target) {
+              entry.target.textContent = Math.floor(count) + '+';
+              setTimeout(updateCount, 25);
+            } else {
+              entry.target.textContent = target + '+';
+            }
+          };
+          updateCount();
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    statNumbers.forEach(stat => {
+      stat.textContent = '0+';
+      observer.observe(stat);
+    });
+  </script>
+</body>
+</html>

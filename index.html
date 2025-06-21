@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MACHRO | Community Health & Empowerment</title>
+  <meta name="description" content="MACHRO transforms lives in West Nile, Uganda through health initiatives, education programs, and economic empowerment.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #093e5e;
+      --secondary-color: #f5b041;
+      --accent-color: #e67e22;
+      --light-text: #ffffff;
+      --dark-text: #333333;
+      --light-bg: #f9f9f9;
+      --dark-bg: #2c3e50;
+      --transition: all 0.3s ease;
+      /* Updated overlay opacities */
+      --hero-overlay: rgba(21, 101, 192, 0.7);
+      --story-overlay: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+      --cta-overlay: rgba(9, 62, 94, 0.8);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: var(--dark-text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    /* Header & Navigation */
+    header {
+      background: var(--primary-color);
+      padding: 1rem 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 60px;
+      border-radius: 5px;
+      transition: var(--transition);
+    }
+
+    .logo img:hover {
+      transform: scale(1.05);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      color: var(--light-text);
+      font-weight: 600;
+      padding: 0.5rem 0;
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--secondary-color);
+    }
+
+    .nav-links a.active {
+      color: var(--secondary-color);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--secondary-color);
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      color: white;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+
+    /* Enhanced Hero Section */
+    .home-hero {
+      background: linear-gradient(var(--hero-overlay), var(--hero-overlay)), 
+                  url('images/home2.jpg') center/cover no-repeat;
+      height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      margin-top: 80px;
+      position: relative;
+      overflow: hidden;
+      animation: heroZoom 20s infinite alternate;
+    }
+
+    @keyframes heroZoom {
+      0% {
+        background-size: 100%;
+      }
+      100% {
+        background-size: 110%;
+      }
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .home-hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1.5rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .home-hero p {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-btn {
+      display: inline-block;
+      padding: 1rem 2rem;
+      border-radius: 5px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      transition: var(--transition);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .hero-btn.primary {
+      background: var(--secondary-color);
+      color: var(--dark-text);
+    }
+
+    .hero-btn.secondary {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+    }
+
+    .hero-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    }
+
+    .hero-btn.primary:hover {
+      background: #e09a36;
+    }
+
+    .hero-btn.secondary:hover {
+      background: rgba(255,255,255,0.1);
+    }
+
+    /* About Section */
+    .about-section {
+      padding: 5rem 0;
+      background: white;
+    }
+
+    .about-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .about-image {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: var(--transition);
+    }
+
+    .about-image:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.95) contrast(1.05);
+    }
+
+    .about-content h2 {
+      color: var(--primary-color);
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-content h2 span {
+      color: var(--secondary-color);
+    }
+
+    .about-content p {
+      margin-bottom: 1.5rem;
+      color: #555;
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 1.5rem;
+      background: var(--light-bg);
+      border-radius: 5px;
+      transition: var(--transition);
+    }
+
+    .stat-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      color: var(--dark-text);
+      font-weight: 600;
+    }
+
+    /* Enhanced Programs Section */
+    .programs-section {
+      padding: 5rem 0;
+      background: var(--light-bg);
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+      color: var(--primary-color);
+    }
+
+    .section-title h2 {
+      font-size: 2.5rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: var(--secondary-color);
+    }
+
+    .programs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+    }
+
+    .program-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: var(--transition);
+    }
+
+    .program-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    }
+
+    .program-img {
+      height: 250px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .program-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease, filter 0.5s ease;
+      filter: brightness(0.9) contrast(1.1);
+    }
+
+    .program-card:hover .program-img img {
+      transform: scale(1.1);
+      filter: brightness(1) contrast(1.2);
+    }
+
+    .program-content {
+      padding: 1.5rem;
+    }
+
+    .program-content h3 {
+      color: var(--primary-color);
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .program-content p {
+      color: #555;
+      margin-bottom: 1.5rem;
+    }
+
+    .program-link {
+      display: inline-block;
+      padding: 0.7rem 1.5rem;
+      background: var(--primary-color);
+      color: white;
+      border-radius: 5px;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .program-link:hover {
+      background: var(--accent-color);
+      transform: translateY(-2px);
+    }
+
+    /* Enhanced Impact Stories Section */
+    .stories-section {
+      padding: 5rem 0;
+      background: white;
+    }
+
+    .stories-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .story-card {
+      position: relative;
+      height: 400px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .story-img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .story-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.9);
+      transition: transform 0.5s ease;
+    }
+
+    .story-card:hover .story-img img {
+      transform: scale(1.05);
+    }
+
+    .story-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--story-overlay);
+      padding: 2rem 1.5rem;
+      color: white;
+      transition: all 0.3s ease;
+    }
+
+    .story-card:hover .story-overlay {
+      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    }
+
+    .story-overlay h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .story-overlay p {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    /* Enhanced Call-to-Action Section */
+    .cta-section {
+      padding: 5rem 0;
+      background: linear-gradient(var(--cta-overlay), var(--cta-overlay)), 
+                  url('images/gallery.jpg') center/cover no-repeat fixed;
+      color: white;
+      text-align: center;
+      position: relative;
+    }
+
+    .cta-content {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta-content h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .cta-content p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      padding: 1rem 2rem;
+      border-radius: 5px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      transition: var(--transition);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .cta-btn.primary {
+      background: var(--secondary-color);
+      color: var(--dark-text);
+    }
+
+    .cta-btn.secondary {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    }
+
+    .cta-btn.primary:hover {
+      background: #e09a36;
+    }
+
+    .cta-btn.secondary:hover {
+      background: rgba(255,255,255,0.1);
+    }
+
+    /* Footer Styles */
+    footer {
+      background-color: var(--dark-bg);
+      color: var(--light-text);
+      padding: 3rem 0 1rem;
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-about h3 {
+      color: var(--secondary-color);
+      margin-bottom: 1.5rem;
+      font-size: 1.2rem;
+    }
+
+    .footer-links h4, .footer-contact h4, .footer-qr h4 {
+      color: var(--secondary-color);
+      margin-bottom: 1.5rem;
+      font-size: 1.2rem;
+    }
+
+    .footer-links ul {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-links a {
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: var(--secondary-color);
+      padding-left: 5px;
+    }
+
+    .footer-contact p {
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .social-icons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      transition: var(--transition);
+    }
+
+    .social-icons a:hover {
+      background: var(--secondary-color);
+      transform: translateY(-3px);
+    }
+
+    /* QR Code Section Styles */
+    .footer-qr {
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .footer-qr img, .footer-qr canvas {
+      width: 150px;
+      height: 150px;
+      margin: 0 auto;
+      border: 2px solid var(--secondary-color);
+      border-radius: 5px;
+      padding: 5px;
+      background: white;
+    }
+
+    .footer-qr p {
+      font-size: 0.8rem;
+      margin-top: 0.5rem;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.9rem;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--primary-color);
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 0;
+        clip-path: circle(0px at 90% -10%);
+        transition: all 0.5s ease-out;
+        pointer-events: none;
+      }
+
+      .nav-links.active {
+        clip-path: circle(1000px at 90% -10%);
+        pointer-events: all;
+      }
+
+      .nav-links a {
+        padding: 0.8rem 0;
+      }
+
+      .home-hero {
+        height: 500px;
+        animation: none;
+        background-attachment: scroll;
+      }
+
+      .home-hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .home-hero p {
+        font-size: 1.2rem;
+      }
+
+      .about-container {
+        grid-template-columns: 1fr;
+      }
+
+      .about-image {
+        height: 300px;
+        order: -1;
+      }
+
+      .about-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-buttons, .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .hero-btn, .cta-btn {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+      }
+
+      .cta-section {
+        background-attachment: scroll;
+      }
+      
+      .program-img img {
+        filter: brightness(0.95) contrast(1.05);
+      }
+
+      .footer-container {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-qr {
+        order: -1; /* Moves QR code to top on mobile */
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <div class="logo">
+          <a href="index.html"><img src="images/logo.jpg" alt="MACHRO Logo"></a>
+        </div>
+        <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+        <div class="nav-links" id="nav-links">
+          <a href="index.html" class="active">Home</a>
+          <a href="about.html">About</a>
+          <a href="programs.html">Programs</a>
+          <a href="get involved.html">Get Involved</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Enhanced Hero Section -->
+  <section class="home-hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Transforming Lives in West Nile, Uganda</h1>
+        <p>Through healthcare, education, and economic empowerment, we're building healthier, more sustainable communities.</p>
+        <div class="hero-buttons">
+          <a href="programs.html" class="hero-btn primary">Our Programs</a>
+          <a href="get involved.html" class="hero-btn secondary">Get Involved</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section">
+    <div class="container">
+      <div class="about-container">
+        <div class="about-image">
+          <img src="images/home.jpg" alt="MACHRO team working in Uganda">
+        </div>
+        <div class="about-content">
+          <h2>About <span>MACHRO</span></h2>
+          <p>MACHRO (Maracha Community Health and Empowerment Organization) is a grassroots nonprofit dedicated to improving lives in West Nile, Uganda. Founded by local leaders, we address critical needs in healthcare, education, and economic development.</p>
+          <p>Our approach combines direct service with community empowerment, ensuring sustainable change that comes from within the communities we serve.</p>
+          
+          <div class="about-stats">
+            <div class="stat-item">
+              <div class="stat-number">500+</div>
+              <div class="stat-label">Patients Served</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">3</div>
+              <div class="stat-label">Schools Supported</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">120</div>
+              <div class="stat-label">Women Empowered</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enhanced Programs Section -->
+  <section class="programs-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our Programs</h2>
+        <p>Creating impact through focused initiatives</p>
+      </div>
+      <div class="programs-grid">
+        <!-- Program 1 -->
+        <div class="program-card">
+          <div class="program-img">
+            <img src="images/capacity building workshop.jpg" alt="Healthcare program">
+          </div>
+          <div class="program-content">
+            <h3>Community Health</h3>
+            <p>Providing essential medical services, health education, and disease prevention programs to underserved communities.</p>
+            <a href="programs.html#health" class="program-link">Learn More</a>
+          </div>
+        </div>
+        
+        <!-- Program 2 -->
+        <div class="program-card">
+          <div class="program-img">
+            <img src="images/home2.jpg" alt="Education program">
+          </div>
+          <div class="program-content">
+            <h3>Education Support</h3>
+            <p>Improving access to quality education through school resources, teacher training, and scholarship programs.</p>
+            <a href="programs.html#education" class="program-link">Learn More</a>
+          </div>
+        </div>
+        
+        <!-- Program 3 -->
+        <div class="program-card">
+          <div class="program-img">
+            <img src="images/youth savings.jpg" alt="Economic empowerment">
+          </div>
+          <div class="program-content">
+            <h3>Economic Empowerment</h3>
+            <p>Vocational training and microfinance initiatives to help community members build sustainable livelihoods.</p>
+            <a href="programs.html#economic" class="program-link">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enhanced Impact Stories Section -->
+  <section class="stories-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Impact Stories</h2>
+        <p>See how we're making a difference in people's lives</p>
+      </div>
+      <div class="stories-container">
+        <!-- Story 1 -->
+        <div class="story-card">
+          <div class="story-img">
+            <img src="images/health.jpg" alt="Medical outreach program">
+          </div>
+          <div class="story-overlay">
+            <h3>Medical Outreach</h3>
+            <p>500+ patients received free healthcare services in our last campaign</p>
+          </div>
+        </div>
+        
+        <!-- Story 2 -->
+        <div class="story-card">
+          <div class="story-img">
+            <img src="images/women group.jpg" alt="Women's empowerment workshop">
+          </div>
+          <div class="story-overlay">
+            <h3>Women's Empowerment</h3>
+            <p>120 women trained in vocational skills and small business management</p>
+          </div>
+        </div>
+        
+        <!-- Story 3 -->
+        <div class="story-card">
+          <div class="story-img">
+            <img src="images/capacity building workshop.jpg" alt="School children learning">
+          </div>
+          <div class="story-overlay">
+            <h3>Education Programs</h3>
+            <p>3 schools supported with resources and teacher training programs</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enhanced Call-to-Action Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Join Us in Making a Difference</h2>
+        <p>Your support can help transform more lives in West Nile, Uganda. Whether through volunteering, donations, or partnerships, every contribution matters.</p>
+        <div class="cta-buttons">
+          <a href="get involved.html" class="cta-btn primary">Get Involved</a>
+          <a href="contact.html" class="cta-btn secondary">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-about">
+          <h3>MACHRO</h3>
+          <p>Creating a healthy and economically sustainable community in West Nile, Uganda.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="get involved.html">Get Involved</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact Us</h4>
+          <p><i class="fas fa-map-marker-alt"></i> Maracha District, Uganda</p>
+          <p><i class="fas fa-envelope"></i> enzaruemmanuela@gmail.com</p>
+          <p><i class="fas fa-phone"></i> +256 770 902 783</p>
+          <div class="social-icons">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <!-- QR Code Section -->
+        <div class="footer-qr">
+          <h4>Scan to Contact Us</h4>
+          <!-- Option 1: Static QR Code Image -->
+          <img src="icons/3ea8e0c12ff1e68fcb94709d5bde9f32.png" alt="QR Code to MACHRO Contact Page">
+          
+          <!-- Option 2: Dynamic QR Code Generation (uncomment to use) -->
+          <!-- <canvas id="qr-code"></canvas> -->
+          
+          <p>Scan this code to quickly access our contact page</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 MACHRO. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Simple animation for stats counting
+    const statNumbers = document.querySelectorAll('.stat-number');
+    if (statNumbers) {
+      const options = {
+        threshold: 0.5
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const target = +entry.target.getAttribute('data-target');
+            const count = +entry.target.innerText;
+            const increment = target / 100;
+            
+            if (count < target) {
+              entry.target.innerText = Math.ceil(count + increment);
+              setTimeout(() => {
+                observer.observe(entry.target);
+              }, 25);
+            } else {
+              entry.target.innerText = target;
+            }
+          }
+        });
+      }, options);
+
+      statNumbers.forEach(stat => {
+        const target = +stat.innerText;
+        stat.setAttribute('data-target', target);
+        stat.innerText = '0';
+        observer.observe(stat);
+      });
+    }
+
+    // Optional: Hero image slideshow
+    const heroImages = [
+      'images/home2.jpg',
+      'images/home3.jpg',
+      'images/home4.jpg'
+    ];
+    let currentHeroIndex = 0;
+    const heroSection = document.querySelector('.home-hero');
+
+    function changeHeroBackground() {
+      currentHeroIndex = (currentHeroIndex + 1) % heroImages.length;
+      heroSection.style.backgroundImage = `linear-gradient(var(--hero-overlay), var(--hero-overlay)), url(${heroImages[currentHeroIndex]})`;
+    }
+
+    // Uncomment to enable automatic slideshow (every 5 seconds)
+    // setInterval(changeHeroBackground, 5000);
+
+    // Uncomment this section if using dynamic QR code generation
+    /*
+    // Generate QR code dynamically
+    document.addEventListener('DOMContentLoaded', function() {
+      // Load QRious library dynamically
+      const script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/qrious@4.0.2/dist/qrious.min.js';
+      script.onload = function() {
+        // Generate QR code after library is loaded
+        const qr = new QRious({
+          element: document.getElementById('qr-code'),
+          value: window.location.origin + '/contact.html', // Adjust if your contact page has different URL
+          size: 150,
+          background: 'white',
+          foreground: 'black',
+          level: 'H' // High error correction
+        });
+      };
+      document.head.appendChild(script);
+    });
+    */
+  </script>
+</body>
+</html>

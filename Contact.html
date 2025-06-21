@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us | MACHRO - Transforming Community Health</title>
+  <meta name="description" content="Get in touch with MACHRO to learn more about our programs, partnerships, or how you can support our work in West Nile, Uganda.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #093e5e;
+      --secondary-color: #f5b041;
+      --accent-color: #e67e22;
+      --light-text: #ffffff;
+      --dark-text: #333333;
+      --light-bg: #f9f9f9;
+      --dark-bg: #2c3e50;
+      --transition: all 0.3s ease;
+      /* Red color variables for hero section */
+      --hero-red: #C62828;
+      --hero-overlay: rgba(198, 40, 40, 0.85);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: var(--dark-text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    /* Header & Navigation */
+    header {
+      background: var(--primary-color);
+      padding: 1rem 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 60px;
+      border-radius: 5px;
+      transition: var(--transition);
+    }
+
+    .logo img:hover {
+      transform: scale(1.05);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      color: var(--light-text);
+      font-weight: 600;
+      padding: 0.5rem 0;
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--secondary-color);
+    }
+
+    .nav-links a.active {
+      color: var(--secondary-color);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--secondary-color);
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      color: white;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+
+    /* Red-themed Hero Section */
+    .contact-hero {
+      background: linear-gradient(var(--hero-overlay), var(--hero-overlay)), 
+                  url('https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+      height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      margin-top: 80px;
+    }
+
+    .contact-hero h1 {
+      font-size: 3.2rem;
+      margin-bottom: 1.5rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .contact-hero p {
+      font-size: 1.5rem;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    }
+
+    .hero-btn {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background: var(--secondary-color);
+      color: var(--dark-text);
+      border-radius: 5px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      transition: var(--transition);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .hero-btn:hover {
+      background: #e09a36;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    }
+
+    /* Contact Options Section */
+    .contact-options {
+      padding: 4rem 0;
+      background: var(--light-bg);
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+      color: var(--primary-color);
+    }
+
+    .section-title h2 {
+      font-size: 2.5rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: var(--secondary-color);
+    }
+
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+    }
+
+    .option-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: var(--transition);
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .option-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    }
+
+    .option-icon {
+      font-size: 3rem;
+      color: var(--secondary-color);
+      margin-bottom: 1.5rem;
+    }
+
+    .option-content h3 {
+      color: var(--primary-color);
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .option-content p {
+      color: #555;
+      margin-bottom: 1.5rem;
+    }
+
+    .option-btn {
+      display: inline-block;
+      padding: 0.7rem 1.5rem;
+      background: var(--primary-color);
+      color: white;
+      border-radius: 5px;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .option-btn:hover {
+      background: var(--accent-color);
+      transform: translateY(-2px);
+    }
+    .contact-hero{
+      background: linear-gradient(var(--hero-overlay), var(--hero-overlay)), 
+                  url('images/home2.jpg') center/cover no-repeat;
+    }
+
+    /* Contact Form Section */
+    .contact-form-section {
+      padding: 4rem 0;
+      background: white;
+    }
+
+    .form-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .form-image {
+      height: 100%;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .form-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .contact-form {
+      background: var(--light-bg);
+      padding: 2.5rem;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .contact-form h2 {
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: var(--primary-color);
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    input:focus, textarea:focus, select:focus {
+      outline: none;
+      border-color: var(--secondary-color);
+      box-shadow: 0 0 0 2px rgba(245, 176, 65, 0.2);
+    }
+
+    textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .form-btn {
+      display: inline-block;
+      width: 100%;
+      padding: 1rem;
+      background-color: var(--secondary-color);
+      color: var(--dark-text);
+      border: none;
+      border-radius: 5px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 1rem;
+    }
+
+    .form-btn:hover {
+      background-color: #e09a36;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    /* Team Section */
+    .team-section {
+      padding: 4rem 0;
+      background: var(--light-bg);
+      text-align: center;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .team-member {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: var(--transition);
+    }
+
+    .team-member:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    }
+
+    .member-img {
+      height: 250px;
+      overflow: hidden;
+    }
+
+    .member-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .team-member:hover .member-img img {
+      transform: scale(1.05);
+    }
+
+    .member-info {
+      padding: 1.5rem;
+    }
+
+    .member-info h3 {
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+    }
+
+    .member-info p.position {
+      color: var(--accent-color);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .member-contact {
+      margin-top: 1rem;
+    }
+
+    .member-contact a {
+      display: inline-block;
+      margin: 0 0.5rem;
+      color: var(--primary-color);
+      transition: var(--transition);
+    }
+
+    .member-contact a:hover {
+      color: var(--secondary-color);
+      transform: translateY(-2px);
+    }
+
+    /* Map Section */
+    .map-section {
+      padding: 0 0 4rem;
+    }
+
+    .map-container {
+      height: 500px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Footer Styles */
+    footer {
+      background-color: var(--dark-bg);
+      color: var(--light-text);
+      padding: 3rem 0 1rem;
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-about h3 {
+      color: var(--secondary-color);
+      margin-bottom: 1.5rem;
+      font-size: 1.2rem;
+    }
+
+    .footer-links h4, .footer-contact h4 {
+      color: var(--secondary-color);
+      margin-bottom: 1.5rem;
+      font-size: 1.2rem;
+    }
+
+    .footer-links ul {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-links a {
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: var(--secondary-color);
+      padding-left: 5px;
+    }
+
+    .footer-contact p {
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .social-icons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      transition: var(--transition);
+    }
+
+    .social-icons a:hover {
+      background: var(--secondary-color);
+      transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.9rem;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--primary-color);
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 0;
+        clip-path: circle(0px at 90% -10%);
+        transition: all 0.5s ease-out;
+        pointer-events: none;
+      }
+
+      .nav-links.active {
+        clip-path: circle(1000px at 90% -10%);
+        pointer-events: all;
+      }
+
+      .nav-links a {
+        padding: 0.8rem 0;
+      }
+
+      .contact-hero {
+        height: 400px;
+      }
+
+      .contact-hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .contact-hero p {
+        font-size: 1.2rem;
+      }
+
+      .form-container {
+        grid-template-columns: 1fr;
+      }
+
+      .form-image {
+        height: 300px;
+        order: -1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <div class="logo">
+          <a href="index.html"><img src="images/logo.jpg" alt="MACHRO Logo"></a>
+        </div>
+        <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+        <div class="nav-links" id="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="programs.html">Programs</a>
+          <a href="get involved.html">Get Involved</a>
+          <a href="contact.html" class="active">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Red-themed Hero Section -->
+  <section class="contact-hero">
+    <div class="container">
+      <h1>We'd Love to Hear From You</h1>
+      <p>Whether you have questions about our programs, want to volunteer, or explore partnership opportunities, our team is ready to connect.</p>
+      <a href="#contact-options" class="hero-btn">How to Reach Us</a>
+    </div>
+  </section>
+
+  <!-- Contact Options Section -->
+  <section class="contact-options" id="contact-options">
+    <div class="container">
+      <div class="section-title">
+        <h2>Contact Options</h2>
+        <p>Choose the most convenient way to get in touch with our team</p>
+      </div>
+      <div class="options-grid">
+        <!-- Email Option -->
+        <div class="option-card">
+          <div class="option-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="option-content">
+            <h3>Email Us</h3>
+            <p>For general inquiries, partnership opportunities, or volunteer information</p>
+            <a href="mailto:enzaruemmanuela@gmail.com" class="option-btn">Send Email</a>
+          </div>
+        </div>
+        
+        <!-- Call Option -->
+        <div class="option-card">
+          <div class="option-icon">
+            <i class="fas fa-phone-alt"></i>
+          </div>
+          <div class="option-content">
+            <h3>Call Us</h3>
+            <p>Available during business hours (EAT) for immediate assistance</p>
+            <a href="tel:+256770902783" class="option-btn">+256 770 902 783</a>
+          </div>
+        </div>
+        
+        <!-- Visit Option -->
+        <div class="option-card">
+          <div class="option-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div class="option-content">
+            <h3>Visit Us</h3>
+            <p>Our offices in Maracha District, Uganda. Schedule a visit in advance.</p>
+            <a href="#location-map" class="option-btn">View Location</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form Section -->
+  <section class="contact-form-section">
+    <div class="container">
+      <div class="form-container">
+        <div class="form-image">
+          <img src="images/youths engagement.jpg" alt="MACHRO team meeting">
+        </div>
+        <div class="contact-form">
+          <h2>Send Us a Message</h2>
+          <form action="send_message.php" method="POST" id="contactForm">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <select id="subject" name="subject" required>
+                <option value="" disabled selected>Select a subject</option>
+                <option value="General Inquiry">General Inquiry</option>
+                <option value="Volunteering">Volunteering</option>
+                <option value="Partnership">Partnership</option>
+                <option value="Donation">Donation</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Your Message</label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+            
+            <button type="submit" class="form-btn">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="team-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our Contact Persons</h2>
+        <p>Meet the team members who can assist you</p>
+      </div>
+      <div class="team-grid">
+        <!-- Team Member 1 -->
+        <div class="team-member">
+          <div class="member-img">
+            <img src="images/ceo.jpg" alt="Aloro Enzaru Emmanueal">
+          </div>
+          <div class="member-info">
+            <h3>Aloro Enzaru Emmanueal</h3>
+            <p class="position">Executive Director</p>
+            <p>Primary contact for partnerships and program inquiries</p>
+            <div class="member-contact">
+              <a href="tel:+256770902783" title="Call"><i class="fas fa-phone"></i></a>
+              <a href="mailto:enzaruemmanuela@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+              <a href="https://wa.me/256770902783" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Team Member 2 -->
+        <div class="team-member">
+          <div class="member-img">
+            <img src="images/managing director. alora samuel.jpg" alt="Aloro Samuel">
+          </div>
+          <div class="member-info">
+            <h3>Aloro Samuel</h3>
+            <p class="position">Managing Director</p>
+            <p>Primary contact for volunteer opportunities and field operations</p>
+            <div class="member-contact">
+              <a href="tel:+256781036078" title="Call"><i class="fas fa-phone"></i></a>
+              <a href="mailto:alorosamuel210@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+              <a href="https://wa.me/256781036078" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map Section -->
+  <section class="map-section" id="location-map">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our Location</h2>
+        <p>Find us in Maracha District, Uganda</p>
+      </div>
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.753724202062!2d30.95421531475389!3d3.249197697706507!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x176b9f7a8f5a4b9d%3A0x1a3a3b5b5b5b5b5b!2sMaracha%20District!5e0!3m2!1sen!2sug!4v1620000000000!5m2!1sen!2sug" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-about">
+          <h3>MACHRO</h3>
+          <p>Creating a healthy and economically sustainable community in West Nile, Uganda.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="get involved.html">Get Involved</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact Us</h4>
+          <p><i class="fas fa-map-marker-alt"></i> Maracha District, Uganda</p>
+          <p><i class="fas fa-envelope"></i> enzaruemmanuela@gmail.com</p>
+          <p><i class="fas fa-phone"></i> +256 770 902 783</p>
+          <div class="social-icons">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 MACHRO. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Form submission
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Here you would typically send the form data to your server
+        // For demonstration, we'll just show an alert
+        alert('Thank you for your message! We will get back to you soon.');
+        this.reset();
+      });
+    }
+  </script>
+</body>
+</html>

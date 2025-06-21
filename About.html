@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Us | MACHRO - Transforming Community Health in West Nile</title>
+  <meta name="description" content="Learn about MACHRO's mission, vision, and the team working to improve health and economic sustainability in West Nile, Uganda.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #093e5e;
+      --secondary-color: #f5b041;
+      --accent-color: #e67e22;
+      --light-text: #ffffff;
+      --dark-text: #333333;
+      --light-bg: #f9f9f9;
+      --dark-bg: #2c3e50;
+      --transition: all 0.3s ease;
+      --hero-orange: #E65100;
+      --hero-overlay: rgba(230, 81, 0, 0.85);
+      --box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      --box-shadow-hover: 0 15px 30px rgba(0,0,0,0.15);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: var(--dark-text);
+      line-height: 1.6;
+      overflow-x: hidden;
+      background-color: #f5f7fa;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      color: #555;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Header & Navigation */
+    header {
+      background: var(--primary-color);
+      padding: 1rem 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 60px;
+      border-radius: 5px;
+      transition: var(--transition);
+    }
+
+    .logo img:hover {
+      transform: scale(1.05);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      color: var(--light-text);
+      font-weight: 600;
+      padding: 0.5rem 0;
+      position: relative;
+    }
+
+    .nav-links a:hover {
+      color: var(--secondary-color);
+    }
+
+    .nav-links a.active {
+      color: var(--secondary-color);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--secondary-color);
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      color: white;
+      cursor: pointer;
+      background: none;
+      border: none;
+      z-index: 1001;
+    }
+
+    /* Orange-themed Hero Section */
+    .about-hero {
+      background: linear-gradient(var(--hero-overlay), var(--hero-overlay)), 
+                  url('images/advocates.jpg') center/cover no-repeat;
+      height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      margin-top: 80px;
+      position: relative;
+    }
+
+    .about-hero .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .about-hero h1 {
+      font-size: 3.2rem;
+      margin-bottom: 1.5rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      animation: fadeInDown 1s ease;
+    }
+
+    .about-hero p {
+      font-size: 1.5rem;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+      animation: fadeInUp 1s ease 0.3s both;
+    }
+
+    /* About Content Section */
+    .about-section {
+      padding: 5rem 0;
+      background-color: white;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-title h2 {
+      color: var(--primary-color);
+      font-size: 2.5rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: var(--secondary-color);
+      border-radius: 2px;
+    }
+
+    .section-title p {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .about-text p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+
+    .about-image {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: var(--box-shadow);
+      height: 100%;
+      transition: var(--transition);
+    }
+
+    .about-image:hover {
+      box-shadow: var(--box-shadow-hover);
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .about-image:hover img {
+      transform: scale(1.05);
+    }
+
+    /* Mission/Vision Cards */
+    .mv-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .mv-card {
+      background: white;
+      border-radius: 10px;
+      padding: 2.5rem 2rem;
+      box-shadow: var(--box-shadow);
+      transition: var(--transition);
+      border-top: 4px solid var(--secondary-color);
+      background-color: var(--light-bg);
+    }
+
+    .mv-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--box-shadow-hover);
+    }
+
+    .mv-card h3 {
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-size: 1.5rem;
+    }
+
+    .mv-card h3 i {
+      color: var(--secondary-color);
+      font-size: 1.8rem;
+    }
+
+    /* Values List */
+    .values-list {
+      margin-top: 4rem;
+      background-color: var(--light-bg);
+      padding: 3rem;
+      border-radius: 10px;
+    }
+
+    .values-list h3 {
+      color: var(--primary-color);
+      margin-bottom: 2rem;
+      text-align: center;
+      font-size: 1.8rem;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .value-item {
+      background: white;
+      padding: 2rem 1.5rem;
+      border-radius: 8px;
+      text-align: center;
+      transition: var(--transition);
+      box-shadow: var(--box-shadow);
+    }
+
+    .value-item:hover {
+      background: var(--primary-color);
+      color: white;
+      transform: translateY(-5px);
+      box-shadow: var(--box-shadow-hover);
+    }
+
+    .value-item i {
+      font-size: 2.5rem;
+      color: var(--secondary-color);
+      margin-bottom: 1.5rem;
+      transition: var(--transition);
+    }
+
+    .value-item:hover i {
+      color: white;
+      transform: rotateY(180deg);
+    }
+
+    .value-item h4 {
+      font-size: 1.2rem;
+      transition: var(--transition);
+    }
+
+    /* Team Section */
+    .team-section {
+      padding: 5rem 0;
+      background: var(--light-bg);
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
+      margin-top: 3rem;
+    }
+
+    .team-member {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: var(--box-shadow);
+      transition: var(--transition);
+      text-align: center;
+    }
+
+    .team-member:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--box-shadow-hover);
+    }
+
+    .team-member-img {
+      height: 320px;
+      overflow: hidden;
+    }
+
+    .team-member-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .team-member:hover .team-member-img img {
+      transform: scale(1.1);
+    }
+
+    .team-member-info {
+      padding: 2rem 1.5rem;
+    }
+
+    .team-member-info h3 {
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+      font-size: 1.3rem;
+    }
+
+    .team-member-info p {
+      color: var(--accent-color);
+      font-weight: 600;
+      margin-bottom: 0;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      padding: 6rem 0;
+      background: linear-gradient(rgba(9, 62, 94, 0.9), rgba(9, 62, 94, 0.9)), 
+                  url('images/cta-bg.jpg') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      position: relative;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.3);
+      z-index: 1;
+    }
+
+    .cta-content {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta-content h2 {
+      font-size: 2.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .cta-content p {
+      font-size: 1.3rem;
+      margin-bottom: 3rem;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      padding: 1.2rem 2.5rem;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      transition: var(--transition);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      min-width: 200px;
+      text-align: center;
+    }
+
+    .cta-btn.primary {
+      background: var(--secondary-color);
+      color: var(--dark-text);
+    }
+
+    .cta-btn.secondary {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    }
+
+    .cta-btn.primary:hover {
+      background: #e09a36;
+    }
+
+    .cta-btn.secondary:hover {
+      background: rgba(255,255,255,0.2);
+    }
+
+    /* Footer Styles */
+    footer {
+      background-color: var(--dark-bg);
+      color: var(--light-text);
+      padding: 4rem 0 1.5rem;
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-about h3 {
+      color: var(--secondary-color);
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+    }
+
+    .footer-about p {
+      color: rgba(255,255,255,0.7);
+    }
+
+    .footer-links h4, .footer-contact h4 {
+      color: var(--secondary-color);
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+    }
+
+    .footer-links ul {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.8rem;
+    }
+
+    .footer-links a {
+      color: rgba(255,255,255,0.7);
+      display: inline-block;
+    }
+
+    .footer-links a:hover {
+      color: var(--secondary-color);
+      transform: translateX(5px);
+    }
+
+    .footer-contact p {
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .footer-contact i {
+      color: var(--secondary-color);
+      width: 20px;
+      text-align: center;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .social-icons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 45px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      transition: var(--transition);
+      color: white;
+      font-size: 1.2rem;
+    }
+
+    .social-icons a:hover {
+      background: var(--secondary-color);
+      transform: translateY(-5px);
+      color: var(--dark-text);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.6);
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 992px) {
+      .about-hero h1 {
+        font-size: 2.8rem;
+      }
+      
+      .about-hero p {
+        font-size: 1.3rem;
+      }
+      
+      .cta-content h2 {
+        font-size: 2.4rem;
+      }
+      
+      .cta-content p {
+        font-size: 1.1rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background: var(--primary-color);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 6rem 2rem 2rem;
+        transition: all 0.5s ease;
+        z-index: 1000;
+      }
+
+      .nav-links.active {
+        left: 0;
+      }
+
+      .nav-links a {
+        padding: 1rem 0;
+        font-size: 1.1rem;
+        width: 100%;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+      }
+
+      .about-hero {
+        height: 400px;
+        margin-top: 70px;
+      }
+
+      .about-hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .about-hero p {
+        font-size: 1.1rem;
+      }
+
+      .about-content {
+        grid-template-columns: 1fr;
+      }
+
+      .about-image {
+        height: 350px;
+        order: -1;
+      }
+
+      .mv-card {
+        padding: 2rem 1.5rem;
+      }
+
+      .values-list {
+        padding: 2rem 1.5rem;
+      }
+
+      .team-member-img {
+        height: 280px;
+      }
+
+      .cta-content h2 {
+        font-size: 2rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .container {
+        padding: 0 1rem;
+      }
+      
+      .about-hero h1 {
+        font-size: 2rem;
+      }
+      
+      .section-title h2 {
+        font-size: 2rem;
+      }
+      
+      .cta-buttons {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .cta-btn {
+        width: 100%;
+      }
+      
+      .footer-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <div class="logo">
+          <a href="index.html"><img src="images/logo.jpg" alt="MACHRO Logo"></a>
+        </div>
+        <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+        <div class="nav-links" id="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html" class="active">About</a>
+          <a href="programs.html">Programs</a>
+          <a href="get involved.html">Get Involved</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Orange-themed Hero Section -->
+  <section class="about-hero">
+    <div class="container">
+      <h1>Our Commitment to West Nile</h1>
+      <p>Transforming lives through health services and economic empowerment since 2017</p>
+    </div>
+  </section>
+
+  <!-- About Content Section -->
+  <section class="about-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our Story</h2>
+        <p>Discover the journey of MACHRO and our impact in West Nile communities</p>
+      </div>
+      
+      <div class="about-content">
+        <div class="about-text">
+          <p>Founded in 2017, MACHRO (Maracha Community Health Rights Organization) is a grassroots nonprofit based in Maracha District, Uganda. We were established to support vulnerable groups through health services and sustainable economic empowerment programs.</p>
+          
+          <p>Our organization addresses critical challenges faced by vulnerable children, orphans, adolescents, persons with disabilities, people living with HIV, and both women and men in our communities. We promote sustainable development through education, training, and advocacy, creating opportunities that enhance well-being and uphold human rights.</p>
+          
+          <p>What began as a local initiative has grown into a comprehensive community development organization, impacting thousands of lives across the West Nile region.</p>
+        </div>
+        
+        <div class="about-image">
+          <img src="images/education.jpg" alt="MACHRO team in the community">
+        </div>
+      </div>
+      
+      <div class="mv-cards">
+        <div class="mv-card">
+          <h3><i class="fas fa-eye"></i> Our Vision</h3>
+          <p>A healthy and economically sustainable community in West Nile where all members have equal opportunities to thrive and reach their full potential.</p>
+        </div>
+        
+        <div class="mv-card">
+          <h3><i class="fas fa-bullseye"></i> Our Mission</h3>
+          <p>To build bridges for accessible diversified health service delivery and poverty eradication for vulnerable groups at the grassroots level in Northern Uganda.</p>
+        </div>
+      </div>
+      
+      <div class="values-list">
+        <h3>Our Core Values</h3>
+        <div class="values-grid">
+          <div class="value-item">
+            <i class="fas fa-shield-alt"></i>
+            <h4>Transparency</h4>
+            <p>Open and honest in all our operations</p>
+          </div>
+          <div class="value-item">
+            <i class="fas fa-handshake"></i>
+            <h4>Integrity</h4>
+            <p>Consistent ethical standards</p>
+          </div>
+          <div class="value-item">
+            <i class="fas fa-heart"></i>
+            <h4>Respect</h4>
+            <p>Value all individuals equally</p>
+          </div>
+          <div class="value-item">
+            <i class="fas fa-balance-scale"></i>
+            <h4>Equity</h4>
+            <p>Fairness in all we do</p>
+          </div>
+          <div class="value-item">
+            <i class="fas fa-users"></i>
+            <h4>Teamwork</h4>
+            <p>Collaborative approach</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="team-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Meet Our Team</h2>
+        <p>The dedicated professionals driving our mission forward</p>
+      </div>
+      
+      <div class="team-grid">
+        <!-- Team Member 1 -->
+        <div class="team-member">
+          <div class="team-member-img">
+            <img src="images/managing director. alora samuel.jpg" alt="Alora Samuel">
+          </div>
+          <div class="team-member-info">
+            <h3>Alora Samuel</h3>
+            <p>Managing Director</p>
+          </div>
+        </div>
+        
+        <!-- Team Member 2 -->
+        <div class="team-member">
+          <div class="team-member-img">
+            <img src="images/hr. opiru sharon violet.jpg" alt="Opiru Sharon Violet">
+          </div>
+          <div class="team-member-info">
+            <h3>Opiru Sharon Violet</h3>
+            <p>HR Officer</p>
+          </div>
+        </div>
+        
+        <!-- Team Member 3 -->
+        <div class="team-member">
+          <div class="team-member-img">
+            <img src="images/M&E, Madira Vicky.jpg" alt="Madira Vicky">
+          </div>
+          <div class="team-member-info">
+            <h3>Madira Vicky</h3>
+            <p>Monitoring & Evaluation</p>
+          </div>
+        </div>
+        
+        <!-- Team Member 4 -->
+        <div class="team-member">
+          <div class="team-member-img">
+            <img src="images/loving, empowerement officer.jpg" alt="Mr. Loving">
+          </div>
+          <div class="team-member-info">
+            <h3>Mr. Loving</h3>
+            <p>Empowerment Officer</p>
+          </div>
+        </div>
+        
+        <!-- Team Member 5 -->
+        <div class="team-member">
+          <div class="team-member-img">
+            <img src="images/Druambo dan amale.jpg" alt="Druambo Dan Amale">
+          </div>
+          <div class="team-member-info">
+            <h3>Druambo Dan Amale</h3>
+            <p>Community Engagement</p>
+          </div>
+        </div>
+        
+        <!-- Team Member 6 -->
+        <div class="team-member">
+          <div class="team-member-img">
+            <img src="images/emmanualla.jpg" alt="Enzaru Emmanuela">
+          </div>
+          <div class="team-member-info">
+            <h3>Enzaru Emmanuela</h3>
+            <p>Co-Founder</p>
+          </div>
+        </div>
+        
+        <!-- Team Member 7 -->
+        <div class="team-member">
+          <div class="team-member-img">
+            <img src="images/viko delilar hc provider.jpg" alt="Viko Delilar">
+          </div>
+          <div class="team-member-info">
+            <h3>Viko Delilar</h3>
+            <p>Health Care Provider</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Join Our Movement</h2>
+        <p>Your support helps us expand our impact in West Nile communities through health services and economic empowerment programs.</p>
+        <div class="cta-buttons">
+          <a href="get involved.html" class="cta-btn primary">Get Involved</a>
+          <a href="contact.html" class="cta-btn secondary">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-about">
+          <h3>MACHRO</h3>
+          <p>Creating a healthy and economically sustainable community in West Nile, Uganda.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="get involved.html">Get Involved</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact Us</h4>
+          <p><i class="fas fa-map-marker-alt"></i> Maracha District, Uganda</p>
+          <p><i class="fas fa-envelope"></i> enzaruemmanuela@gmail.com</p>
+          <p><i class="fas fa-phone"></i> +256 770 902 783</p>
+          <div class="social-icons">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 MACHRO. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      menuToggle.innerHTML = navLinks.classList.contains('active') ? '&times;' : '&#9776;';
+    });
+
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        menuToggle.innerHTML = '&#9776;';
+      });
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Animation on scroll
+    const animateOnScroll = () => {
+      const elements = document.querySelectorAll('.mv-card, .value-item, .team-member');
+      
+      elements.forEach(element => {
+        const elementPosition = element.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.2;
+        
+        if(elementPosition < screenPosition) {
+          element.style.opacity = '1';
+          element.style.transform = 'translateY(0)';
+        }
+      });
+    };
+
+    // Set initial state for animated elements
+    document.querySelectorAll('.mv-card, .value-item, .team-member').forEach(element => {
+      element.style.opacity = '0';
+      element.style.transform = 'translateY(30px)';
+      element.style.transition = 'all 0.6s ease';
+    });
+
+    // Run animation on load and scroll
+    window.addEventListener('load', animateOnScroll);
+    window.addEventListener('scroll', animateOnScroll);
+  </script>
+</body>
+</html>
